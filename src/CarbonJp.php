@@ -94,37 +94,34 @@ class CarbonJp extends Carbon
 	 */
 	public function format($format)
 	{
-		// 和暦関連のオプションがある場合のみ
-		if (preg_match('/(?<!\\\)[J|b|K|k]/', $format)) {
-			// J : 元号
-			if ($this->isCharactor('J', $format)) {
-				$format = $this->replaceCharactor('J', $this->eraName, $format);
-			}
+		// J : 元号
+		if ($this->isCharactor('J', $format)) {
+			$format = $this->replaceCharactor('J', $this->eraName, $format);
+		}
 
-			// b : 元号略称
-			if ($this->isCharactor('b', $format)) {
-				$format = preg_replace('/b/', $this->eraNameShort, $format);
-			}
+		// b : 元号略称
+		if ($this->isCharactor('b', $format)) {
+			$format = preg_replace('/b/', $this->eraNameShort, $format);
+		}
 
-			// K : 和暦用年(元年表示)
-			if ($this->isCharactor('K', $format)) {
-				$format = $this->replaceCharactor('K', $this->yearJpGan, $format);
-			}
+		// K : 和暦用年(元年表示)
+		if ($this->isCharactor('K', $format)) {
+			$format = $this->replaceCharactor('K', $this->yearJpGan, $format);
+		}
 
-			// k : 和暦用年
-			if ($this->isCharactor('k', $format)) {
-				$format = $this->replaceCharactor('k', $this->yearJp, $format);
-			}
+		// k : 和暦用年
+		if ($this->isCharactor('k', $format)) {
+			$format = $this->replaceCharactor('k', $this->yearJp, $format);
+		}
 
-			// x : 日本語曜日
-			if ($this->isCharactor('x', $format)) {
-				$format = $this->replaceCharactor('x', $this->dayOfWeekJp, $format);
-			}
+		// x : 日本語曜日
+		if ($this->isCharactor('x', $format)) {
+			$format = $this->replaceCharactor('x', $this->dayOfWeekJp, $format);
+		}
 
-			// 午前午後
-			if ($this->isCharactor('E', $format)) {
-				$format = $this->replaceCharactor('E', $this->ampmJp, $format);
-			}
+		// 午前午後
+		if ($this->isCharactor('E', $format)) {
+			$format = $this->replaceCharactor('E', $this->ampmJp, $format);
 		}
 
 		return parent::format($format);
