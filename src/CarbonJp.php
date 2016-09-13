@@ -21,8 +21,8 @@ class CarbonJp extends Carbon
 	 * @see http://ja.wikipedia.org/wiki/%E5%85%83%E5%8F%B7%E4%B8%80%E8%A6%A7_%28%E6%97%A5%E6%9C%AC%29 元号一覧 (日本)
 	 */
 	private static $gengoList = [
-		['name' => '平成', 'nameShort' => 'H', 'timestamp' =>  600188400],  // 1989-01-08,
-		['name' => '昭和', 'nameShort' => 'S', 'timestamp' => -1357635600], // 1926-12-25'
+		['name' => '平成', 'nameShort' => 'H', 'timestamp' =>  600188400],  // 1989-01-08
+		['name' => '昭和', 'nameShort' => 'S', 'timestamp' => -1357635600], // 1926-12-25
 		['name' => '大正', 'nameShort' => 'T', 'timestamp' => -1812186000], // 1912-07-30
 		['name' => '明治', 'nameShort' => 'M', 'timestamp' => -3216790800], // 1868-01-25
 	];
