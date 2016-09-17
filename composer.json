@@ -30,6 +30,6 @@
     },
     "scripts": {
         "test": "./vendor/bin/phpunit",
-        "cs": "phpcs --standard=ruleset.xml src/*"
+        "cs": "phpcs --standard=ruleset.xml src/* tests/*"
     }
 }
