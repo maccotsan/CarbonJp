@@ -14,7 +14,8 @@ namespace maccotsan\Carbon;
  */
 class CarbonJpTest extends \PHPUnit_Framework_TestCase
 {
-	public function setUp() {
+	public function setUp()
+	{
 		date_default_timezone_set('Asia/Tokyo');
 	}
 
@@ -63,7 +64,7 @@ class CarbonJpTest extends \PHPUnit_Framework_TestCase
 			$date = CarbonJp::parse("1868-01-24T23:59:59+09:00(JST)");
 			$eraName = $date->eraName;
 			$this->fail('not exeption.');
-		} catch(\Exception $e) {
+		} catch (\Exception $e) {
 			$this->assertSame('元号が取得できませんでした。', $e->getMessage());
 		}
 	}
@@ -113,7 +114,7 @@ class CarbonJpTest extends \PHPUnit_Framework_TestCase
 			$date = CarbonJp::parse("1868-01-24T23:59:59+09:00(JST)");
 			$eraNameShort = $date->eraNameShort;
 			$this->fail('not exeption.');
-		} catch(\Exception $e) {
+		} catch (\Exception $e) {
 			$this->assertSame('元号が取得できませんでした。', $e->getMessage());
 		}
 	}
@@ -175,7 +176,7 @@ class CarbonJpTest extends \PHPUnit_Framework_TestCase
 			$date = CarbonJp::parse("1868-01-24T23:59:59+09:00(JST)");
 			$eraName = $date->yearJp;
 			$this->fail('not exeption.');
-		} catch(\Exception $e){
+		} catch (\Exception $e) {
 			$this->assertSame('元号が取得できませんでした。', $e->getMessage());
 		}
 
@@ -183,7 +184,7 @@ class CarbonJpTest extends \PHPUnit_Framework_TestCase
 			$date = CarbonJp::parse("1868-01-24T23:59:59+09:00(JST)");
 			$eraName = $date->yearJpGan;
 			$this->fail('not exeption.');
-		} catch(\Exception $e){
+		} catch (\Exception $e) {
 			$this->assertSame('元号が取得できませんでした。', $e->getMessage());
 		}
 	}
@@ -244,13 +245,13 @@ class CarbonJpTest extends \PHPUnit_Framework_TestCase
 		$date = CarbonJp::parse("2016-08-15");
 		$expected = 8;
 		$this->assertEquals($expected, $date->month);
-
 	}
 
 	/**
 	 * format
 	 */
-	public function testFormat() {
+	public function testFormat()
+	{
 		$date = CarbonJp::parse("2016-01-01T00:00:00+09:00(JST)");
 		$expected = "2016-01-01 00:00:00";
 		$this->assertEquals($expected, $date);

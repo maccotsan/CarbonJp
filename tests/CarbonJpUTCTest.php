@@ -14,7 +14,8 @@ namespace maccotsan\Carbon;
  */
 class CarbonJpUTCTest extends CarbonJpTest
 {
-	public function setUp() {
+	public function setUp()
+	{
 		date_default_timezone_set('UTC');
 	}
 }
