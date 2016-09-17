@@ -124,7 +124,7 @@ class CarbonJpTest extends \PHPUnit_Framework_TestCase
 	public function testYearJp()
 	{
 		// 平成 1989/01/08 〜
-		$date = CarbonJp::parse("2016-01-01T00:00:00+09:00(JST)");var_dump($date->year);
+		$date = CarbonJp::parse("2016-01-01T00:00:00+09:00(JST)");
 		$expected = 28;
 		$this->assertEquals($expected, $date->yearJp);
 
