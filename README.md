@@ -24,14 +24,14 @@ please rewrite your composer.json.
 
 ````
 use maccotsan\Carbon\CarbonJp;
-CarbonJp::parse("1989-01-08 12:00:00")->eraName; // => '平成'
-CarbonJp::parse("1989-01-08 12:00:00")->eraNameShort; // => 'H'
-CarbonJp::parse("1989-01-08 12:00:00")->yearJp; // => 1
-CarbonJp::parse("1989-01-08 12:00:00")->yearJpGan; // => '元'
-CarbonJp::parse("1989-01-08 12:00:00")->dayOfWeekJp; // => '日'
-CarbonJp::parse("1989-01-08 12:00:00")->ampmJp; // => '午後'
+CarbonJp::parse("1989-01-08T12:00:00+09:00(JST)")->eraName; // => '平成'
+CarbonJp::parse("1989-01-08T12:00:00+09:00(JST)")->eraNameShort; // => 'H'
+CarbonJp::parse("1989-01-08T12:00:00+09:00(JST)")->yearJp; // => 1
+CarbonJp::parse("1989-01-08T12:00:00+09:00(JST)")->yearJpGan; // => '元'
+CarbonJp::parse("1989-01-08T12:00:00+09:00(JST)")->dayOfWeekJp; // => '日'
+CarbonJp::parse("1989-01-08T12:00:00+09:00(JST)")->ampmJp; // => '午後'
 
-CarbonJp::parse("2016-09-02 15:03:08")->format("JK年m月d日(x) Eh時i分s秒"); // => '平成28年09月02日(金) 午後03時03分08秒'
+CarbonJp::parse("2016-09-02T15:03:08+09:00(JST)")->format("JK年m月d日(x) Eh時i分s秒"); // => '平成28年09月02日(金) 午後03時03分08秒'
 ````
 
 ## UnitTest
