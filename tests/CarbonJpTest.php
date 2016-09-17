@@ -271,4 +271,10 @@ class CarbonJpTest extends \PHPUnit_Framework_TestCase
 		$expected = "昭和1年12月30日(木) 午後3時03分08秒";
 		$this->assertEquals($expected, $date->format($format));
 	}
+
+	public function testFaild()
+	{
+		$date = CarbonJp::parse("1926-12-30 15:03:08");
+		$this->assertEquals("", $date->format("aa"));
+	}
 }
