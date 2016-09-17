@@ -18,7 +18,7 @@ class CarbonJp extends Carbon
 {
 	/**
 	 * @var array 元号用設定
-	 * @see http://ja.wikipedia.org/wiki/%E5%85%83%E5%8F%B7%E4%B8%80%E8%A6%A7_%28%E6%97%A5%E6%9C%AC%29 元号一覧 (日本)
+	 * @see http://ja.wikipedia.org/wiki/%E5%85%83%E5%8F%B7%E4%B8%80%E8%A6%A7_%28%E6%97%A5%E6%9C%AC%29 元号一覧
 	 */
 	private static $gengoList = [
 		['name' => '平成', 'nameShort' => 'H', 'timestamp' =>  600188400],  // 1989-01-08
@@ -59,7 +59,7 @@ class CarbonJp extends Carbon
 	 */
 	public function __get($name)
 	{
-		switch($name) {
+		switch ($name) {
 			case "eraName":
 				return $this->getEraName();
 			case "eraNameShort":
@@ -157,7 +157,8 @@ class CarbonJp extends Carbon
 	/**
 	 * 現在のタイムスタンプから一致する元号データを取得
 	 *
-	 * @return mixed
+	 * @throws \Exception 対応する元号がない場合
+	 * @return array 元号データ
 	 */
 	protected function getGengo()
 	{
@@ -195,7 +196,7 @@ class CarbonJp extends Carbon
 	/**
 	 * 和暦（和暦用年）を取得
 	 *
-	 * @param string $useGan 1年目を元年表記するかどうか
+	 * @param boolean $useGan 1年目を元年表記するかどうか
 	 * @return string 文字列
 	 */
 	protected function getYearJp($useGan = false)
