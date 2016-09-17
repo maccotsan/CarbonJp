@@ -1,6 +1,8 @@
 # maccotsan\CarbonJp
 
 [![Build Status](https://travis-ci.org/maccotsan/CarbonJp.svg?branch=master)](https://travis-ci.org/maccotsan/CarbonJp)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/maccotsan/CarbonJp/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/maccotsan/CarbonJp/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/maccotsan/CarbonJp/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/maccotsan/CarbonJp/?branch=master)
 
 ## Install
 please rewrite your composer.json.
