@@ -5,6 +5,7 @@ filter:
 checks:
     php:
         code_rating: true
+        duplication: true
 
 tools:
     external_code_coverage: true
@@ -17,3 +18,11 @@ tools:
     php_mess_detector: true
     php_pdepend: true
     sensiolabs_security_checker: true
+build:
+    tests:
+        override:
+            -
+                command: 'phpunit --coverage-clover=some-file'
+                coverage:
+                    file: 'some-file'
+                    format: 'clover'
