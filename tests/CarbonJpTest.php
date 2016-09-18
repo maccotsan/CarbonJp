@@ -275,5 +275,15 @@ class CarbonJpTest extends \PHPUnit_Framework_TestCase
 		$format = "Jk年n月j日(x) Eg時i分s秒";
 		$expected = "昭和1年12月30日(木) 午後3時03分08秒";
 		$this->assertEquals($expected, $date->format($format));
+
+		$date = CarbonJp::parse("1926-12-30T15:03:08+09:00(JST)");
+		$format = "bk年n月j日(x) Eg時i分s秒";
+		$expected = "S1年12月30日(木) 午後3時03分08秒";
+		$this->assertEquals($expected, $date->format($format));
+
+		$date = CarbonJp::parse("2016-09-02T15:03:08+09:00(JST)");
+		$format = "bK年m月d日(x) Eh時i分s秒";
+		$expected = "H28年09月02日(金) 午後03時03分08秒";
+		$this->assertEquals($expected, $date->format($format));
 	}
 }

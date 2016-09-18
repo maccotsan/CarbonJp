@@ -101,7 +101,7 @@ class CarbonJp extends Carbon
 
 		// b : 元号略称
 		if ($this->isCharactor('b', $format)) {
-			$format = preg_replace('/b/', $this->eraNameShort, $format);
+			$format = $this->replaceCharactor('b', "\\" . $this->eraNameShort, $format);
 		}
 
 		// K : 和暦用年(元年表示)
