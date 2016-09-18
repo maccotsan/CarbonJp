@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="2.8.5">
+  <partials/>
+  <file path="CarbonJp.php" generated-path="CarbonJp.html" hash="20c8de0ecafda7789b48aea528b3f483" package="Default">
+    <docblock line="0">
+      <description>maccotsan/CarbonJp</description>
+      <long-description></long-description>
+      <tag name="copyright" line="0" description="2016 maccotsan &lt;maccotsan@gmail.com&gt;"/>
+      <tag name="license" line="0" description="The MIT License (MIT)"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Carbon">\Carbon\Carbon</namespace-alias>
+    <class final="false" abstract="false" namespace="maccotsan\Carbon" line="17" package="maccotsan\CarbonJp">
+      <extends>\Carbon\Carbon</extends>
+      <name>CarbonJp</name>
+      <full_name>\maccotsan\Carbon\CarbonJp</full_name>
+      <docblock line="17">
+        <description>Class CarbonJp</description>
+        <long-description></long-description>
+        <tag name="package" line="17" description="maccotsan\CarbonJp"/>
+      </docblock>
+      <property static="true" visibility="private" namespace="maccotsan\Carbon" line="23" package="maccotsan\CarbonJp">
+        <name>$gengoList</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::gengoList</full_name>
+        <default>array(array('name' =&gt; '平成', 'nameShort' =&gt; 'H', 'timestamp' =&gt; 600188400), array('name' =&gt; '昭和', 'nameShort' =&gt; 'S', 'timestamp' =&gt; -1357635600), array('name' =&gt; '大正', 'nameShort' =&gt; 'T', 'timestamp' =&gt; -1812186000), array('name' =&gt; '明治', 'nameShort' =&gt; 'M', 'timestamp' =&gt; -3216790800))</default>
+        <docblock line="23">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="23" description="&lt;p&gt;元号用設定&lt;/p&gt;" type="array" variable="">
+            <type>array</type>
+          </tag>
+          <tag name="see" line="23" description="元号一覧" link="http://ja.wikipedia.org/wiki/%E5%85%83%E5%8F%B7%E4%B8%80%E8%A6%A7_%28%E6%97%A5%E6%9C%AC%29"/>
+        </docblock>
+      </property>
+      <property static="true" visibility="private" namespace="maccotsan\Carbon" line="33" package="maccotsan\CarbonJp">
+        <name>$dayOfWeekJpList</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::dayOfWeekJpList</full_name>
+        <default>array(0 =&gt; '日', 1 =&gt; '月', 2 =&gt; '火', 3 =&gt; '水', 4 =&gt; '木', 5 =&gt; '金', 6 =&gt; '土')</default>
+        <docblock line="33">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="33" description="&lt;p&gt;日本語曜日設定&lt;/p&gt;" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="true" visibility="private" namespace="maccotsan\Carbon" line="46" package="maccotsan\CarbonJp">
+        <name>$ampmJpList</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::ampmJpList</full_name>
+        <default>array('am' =&gt; '午前', 'pm' =&gt; '午後')</default>
+        <docblock line="46">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="46" description="&lt;p&gt;午前午後&lt;/p&gt;" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="maccotsan\Carbon" line="60" package="maccotsan\CarbonJp">
+        <name>__get</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::__get()</full_name>
+        <docblock line="60">
+          <description>Get a part of the Carbon object</description>
+          <long-description></long-description>
+          <tag name="param" line="60" description="" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="throws" line="60" description="" type="\InvalidArgumentException">
+            <type>\InvalidArgumentException</type>
+          </tag>
+          <tag name="return" line="60" description="" type="string|integer|\DateTimeZone">
+            <type>string</type>
+            <type>integer</type>
+            <type>\DateTimeZone</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="maccotsan\Carbon" line="95" package="maccotsan\CarbonJp">
+        <name>format</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::format()</full_name>
+        <docblock line="95">
+          <description>和暦などを追加したformatメソッド
+via.http://qiita.com/chiyoyo/items/3d12e5b1ef63e7f332ba</description>
+          <long-description>追加した記号
+J : 元号
+b : 元号略称
+K : 和暦年(1年を元年と表記)
+k : 和暦年
+x : 日本語曜日
+E : 午前午後</long-description>
+          <tag name="param" line="95" description="&lt;p&gt;DateTime::formatに準ずるformat文字列&lt;/p&gt;" type="string" variable="$format">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="95" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$format</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="maccotsan\Carbon" line="136" package="maccotsan\CarbonJp">
+        <name>isCharactor</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::isCharactor()</full_name>
+        <docblock line="136">
+          <description>指定した文字があるかどうか調べる（エスケープされているものは除外）</description>
+          <long-description></long-description>
+          <tag name="param" line="136" description="&lt;p&gt;検索する文字&lt;/p&gt;" type="string" variable="$char">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="136" description="&lt;p&gt;検索される文字列&lt;/p&gt;" type="string" variable="$string">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="136" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$char</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$string</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="maccotsan\Carbon" line="148" package="maccotsan\CarbonJp">
+        <name>replaceCharactor</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::replaceCharactor()</full_name>
+        <docblock line="148">
+          <description>指定した文字を置換する(エスケープされていないもののみ)</description>
+          <long-description></long-description>
+          <tag name="param" line="148" description="&lt;p&gt;置換される文字&lt;/p&gt;" type="string" variable="$char">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="148" description="&lt;p&gt;置換する文字列&lt;/p&gt;" type="string" variable="$replace">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="148" description="&lt;p&gt;元の文字列&lt;/p&gt;" type="string" variable="$string">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="148" description="置換した文字列" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$char</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$replace</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$string</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="maccotsan\Carbon" line="163" package="maccotsan\CarbonJp">
+        <name>getGengo</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::getGengo()</full_name>
+        <docblock line="163">
+          <description>現在のタイムスタンプから一致する元号データを取得</description>
+          <long-description></long-description>
+          <tag name="throws" line="163" description="対応する元号がない場合" type="\Exception">
+            <type>\Exception</type>
+          </tag>
+          <tag name="return" line="163" description="元号データ" type="array">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="maccotsan\Carbon" line="179" package="maccotsan\CarbonJp">
+        <name>getEraName</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::getEraName()</full_name>
+        <docblock line="179">
+          <description>和暦（元号）を取得</description>
+          <long-description></long-description>
+          <tag name="return" line="179" description="文字列" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="maccotsan\Carbon" line="190" package="maccotsan\CarbonJp">
+        <name>getEraNameShort</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::getEraNameShort()</full_name>
+        <docblock line="190">
+          <description>和暦（元号略称）を取得</description>
+          <long-description></long-description>
+          <tag name="return" line="190" description="文字列" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="maccotsan\Carbon" line="202" package="maccotsan\CarbonJp">
+        <name>getYearJp</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::getYearJp()</full_name>
+        <docblock line="202">
+          <description>和暦（和暦用年）を取得</description>
+          <long-description></long-description>
+          <tag name="param" line="202" description="&lt;p&gt;1年目を元年表記するかどうか&lt;/p&gt;" type="boolean" variable="$useGan">
+            <type>boolean</type>
+          </tag>
+          <tag name="return" line="202" description="文字列" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$useGan</name>
+          <default>false</default>
+          <type>boolean</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="maccotsan\Carbon" line="217" package="maccotsan\CarbonJp">
+        <name>getDayOfWeekJp</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::getDayOfWeekJp()</full_name>
+        <docblock line="217">
+          <description>日本語曜日を取得</description>
+          <long-description></long-description>
+          <tag name="return" line="217" description="文字列" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="maccotsan\Carbon" line="228" package="maccotsan\CarbonJp">
+        <name>getAmPmJp</name>
+        <full_name>\maccotsan\Carbon\CarbonJp::getAmPmJp()</full_name>
+        <docblock line="228">
+          <description>午前午後を取得</description>
+          <long-description></long-description>
+          <tag name="return" line="228" description="文字列" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <source>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</source>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <package name="maccotsan" full_name="maccotsan">
+    <package name="CarbonJp" full_name="maccotsan\CarbonJp"/>
+  </package>
+  <namespace name="maccotsan" full_name="maccotsan">
+    <namespace name="Carbon" full_name="maccotsan\Carbon"/>
+  </namespace>
+  <deprecated count="0"/>
+</project>

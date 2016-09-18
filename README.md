@@ -34,6 +34,9 @@ CarbonJp::parse("1989-01-08T12:00:00+09:00(JST)")->ampmJp; // => '午後'
 CarbonJp::parse("2016-09-02T15:03:08+09:00(JST)")->format("JK年m月d日(x) Eh時i分s秒"); // => '平成28年09月02日(金) 午後03時03分08秒'
 ````
 
+## Document
+https://maccotsan.github.io/CarbonJp/
+
 ## UnitTest
 ````
 composer install --dev
