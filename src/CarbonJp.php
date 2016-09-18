@@ -216,7 +216,7 @@ class CarbonJp extends Carbon
 	 */
 	protected function getDayOfWeekJp()
 	{
-		$w = $this->format('w', $this->getTimestamp());
+		$w = $this->format('w');
 		return self::$dayOfWeekJpList[$w];
 	}
 
@@ -227,7 +227,7 @@ class CarbonJp extends Carbon
 	 */
 	protected function getAmPmJp()
 	{
-		$a = $this->format('a', $this->getTimestamp());
+		$a = $this->format('a');
 		return isset(self::$ampmJpList[$a]) ? self::$ampmJpList[$a] : '';
 	}
 }
