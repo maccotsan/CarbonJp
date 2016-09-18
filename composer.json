@@ -16,7 +16,8 @@
         "nesbot/Carbon": "^1.21"
     },
     "require-dev": {
-        "phpunit/phpunit": "5.5"
+        "phpunit/phpunit": "5.5",
+        "phpdocumentor/phpdocumentor": "2.*"
     },
     "autoload": {
         "psr-4": {
@@ -33,6 +34,9 @@
 		"cs": [
 			"phpcs --config-set encoding utf-8",
 			"phpcs --standard=ruleset.xml src/* tests/*"
-		]
+		],
+        "doc": [
+            "vendor/bin/phpdoc -d src -t docs --template=abstract"
+        ]
     }
 }
